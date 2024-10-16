@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+// Color Palette
+$color-dark-gray: #545863;
+$color-electric-blue: #00e8fc;
+$color-burnt-orange: #f96e46;
+$color-mustard: #f9c846;
+$color-peach-yellow: #ecce8e;
+$color-cream: #f3ffb9;
+$color-navy-blue: #001427;
+$color-black: #011627;
+$color-light-gray: #577590;
+$color-purple: #8d3b72;
+
+// app-root
+app-root {
+  display: flex;
+  flex: 1;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}

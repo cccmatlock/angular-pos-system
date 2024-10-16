@@ -1,10 +1,12 @@
-.main {
-  width: 100%;
-  min-height: 100%;
+@import "styles";
+
+.home-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  box-sizing: inherit;
-  position: relative;
+  flex: 1;
+  background-color: $color-navy-blue;
+}
+
+.navbar {
+  display: flex;
+  width: 80px;
 }

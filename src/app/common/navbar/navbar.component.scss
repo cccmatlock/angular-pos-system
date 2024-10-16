@@ -1,0 +1,19 @@
+@import "styles";
+
+.nav-bar-container {
+  background-color: $color-light-gray;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 32px;
+  padding: 12px;
+  width: 80px;
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: 1px solid red;
+}
