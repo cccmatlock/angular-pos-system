@@ -15,6 +15,20 @@
     overflow-y: auto;
   }
 
+  ul {
+    display: flex;
+  }
+
+  ul li {
+    flex: 1;
+  }
+
+  ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .p-tabview-panel {
     height: 100%;
     max-height: 100%;
