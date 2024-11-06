@@ -1,16 +1,31 @@
 <p-tabView>
   <p-tabPanel header="Register">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum. in voluptate velit esse cillum dolore eu fugiat nulla
-      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-      qui officia deserunt mollit anim id est laborum.
-    </p>
+    <div class="panel-container">
+      <div class="items-container">
+        <h2 class="register-header">
+          <div class="item-column">Item</div>
+          <div>Qty</div>
+        </h2>
+        <ul class="items-list">
+          <li class="item" *ngFor="let item of items">
+            <div class="item-name">
+              <p-button
+                icon="pi pi-times"
+                (click)="deleteItem(item.id)"
+                class="x-button"
+                severity="danger"
+              />
+              <div>{{ item.name }}</div>
+            </div>
+            <div>{{ item.qty }}</div>
+          </li>
+        </ul>
+      </div>
+      <div class="buttons-container">
+        <p-button label="Clear" severity="danger" (onClick)="clearItems()" />
+        <p-button label="Checkout" severity="help" (onClick)="clearItems()" />
+      </div>
+    </div>
   </p-tabPanel>
   <p-tabPanel header="Settings">
     <p>

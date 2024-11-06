@@ -16,7 +16,7 @@
       </ng-template>
       <div class="items-container">
         <ng-container *ngFor="let item of category.items">
-          <p-button>
+          <p-button (onClick)="addItem(item)">
             <div class="item-container">
               <p-image height="75" width="75" [src]="item.img" />
               <span class="font-bold white-space-nowrap m-0">

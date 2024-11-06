@@ -4,6 +4,10 @@ export interface Item {
   img: string;
 }
 
+export interface RegisterItem extends Item {
+  qty: number;
+}
+
 export interface ItemCategory {
   id: string;
   name: string;

@@ -1,13 +1,31 @@
+@import "styles";
+
 :host ::ng-deep {
   p-tabview {
     display: flex;
     flex-direction: column;
+    flex: 1;
   }
 
   p-tabview div[data-pc-name="tabview"] {
     display: flex;
     flex-direction: column;
     height: 100%;
+  }
+
+  p-button {
+    display: flex;
+    flex: 1 1 50%;
+  }
+
+  button {
+    flex: 1 1 50%;
+  }
+
+  p-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .p-tabview-panels {
@@ -31,7 +49,74 @@
 
   .p-tabview-panel {
     height: 100%;
-    max-height: 100%;
-    overflow-y: auto;
   }
+}
+
+.panel-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  gap: 16px;
+}
+
+.register-header {
+  display: flex;
+  margin: 0;
+  max-height: 40px;
+  padding-left: 8px;
+}
+
+.item-column {
+  padding-left: 64px;
+  flex: 1;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $color-burnt-orange;
+  border-radius: 8px;
+  flex: 5;
+  padding: 16px;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  flex: 0 0 auto; /* This removes the flex behavior */
+  gap: 16px;
+  font-size: 1.5rem;
+}
+
+.item-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.buttons-container {
+  display: flex;
+  height: 80px;
+  gap: 16px;
+}
+
+.x-button {
+  height: 25px;
+  width: 25px;
+  flex: 0 0 auto; /* This removes the flex behavior */
+}
+
+.item > span button.pi-times {
+  color: white; /* Set the color of the 'x' icon to white */
 }

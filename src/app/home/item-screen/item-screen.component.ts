@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AvatarModule } from 'primeng/avatar';
 import { BadgeModule } from 'primeng/badge';
 import { TabViewModule } from 'primeng/tabview';
-import { Item, ItemCategory } from './item';
+import { Item, ItemCategory } from '../../common/types/item';
 import { ImageModule } from 'primeng/image';
 import {
   APPLE_IMG_PATH,
@@ -23,6 +23,7 @@ import {
 } from './item-constants';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import { RegisterService } from '../../services/register-service/register-service.service';
 
 @Component({
   selector: 'app-item-screen',
@@ -38,7 +39,7 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './item-screen.component.html',
   styleUrl: './item-screen.component.scss',
 })
-export class ItemScreenComponent {
+export class ItemScreenComponent implements OnInit {
   itemCategories: ItemCategory[] = [
     {
       id: '1',
@@ -110,16 +111,31 @@ export class ItemScreenComponent {
           img: MILK_IMG_PATH,
         },
         {
-          id: '1',
+          id: '2',
           name: 'half & half',
           img: HALF_AND_HALF_IMG_PATH,
         },
         {
-          id: '1',
+          id: '3',
           name: 'yogurt',
           img: YOGURT_IMG_PATH,
         },
       ],
     },
   ];
+  items: Item[] = [];
+
+  constructor(private registerService: RegisterService) {}
+
+  ngOnInit() {
+    // Subscribe to the items array to update the component whenever the array changes
+    this.registerService.items$.subscribe((items) => {
+      this.items = items;
+    });
+  }
+
+  // Call addItem method from RegisterService
+  addItem(newItem: Item) {
+    this.registerService.addItem(newItem); // Adds or updates item in the service
+  }
 }
