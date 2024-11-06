@@ -1,18 +1,43 @@
-<div class="card card-wrapper">
-  <p-tabView styleClass="tabview-custom tab-view">
-    <p-tabPanel class="tab-panel">
+<p-tabView>
+  <ng-container *ngFor="let category of itemCategories">
+    <p-tabPanel [header]="category.name">
+      <ng-template pTemplate="header">
+        <div class="header-container">
+          <p-avatar
+            [image]="category.img"
+            alt="Produce"
+            shape="circle"
+            size="large"
+          />
+          <span class="font-bold white-space-nowrap m-0">
+            {{ category.name }}
+          </span>
+        </div>
+      </ng-template>
+      <div class="items-container">
+        <ng-container *ngFor="let item of category.items">
+          <p-button>
+            <div class="item-container">
+              <p-image height="75" width="75" [src]="item.img" />
+              <span class="font-bold white-space-nowrap m-0">
+                {{ item.name }}
+              </span>
+            </div>
+          </p-button>
+        </ng-container>
+      </div>
+    </p-tabPanel>
+  </ng-container>
+
+  <!-- <p-tabPanel class="tab-panel">
       <ng-template pTemplate="header">
         <div class="flex align-items-center gap-2">
-          <p-avatar
-            image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
-            shape="circle"
-          />
           <span class="font-bold white-space-nowrap m-0"> Amy Elsner </span>
         </div>
       </ng-template>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-    </p-tabPanel>
-    <p-tabPanel header="Header II">
+    </p-tabPanel> -->
+  <!-- <p-tabPanel header="Header II">
       <ng-template pTemplate="header">
         <div class="flex align-items-center gap-2">
           <p-avatar
@@ -39,6 +64,5 @@
         </div>
       </ng-template>
       <p>At vero eos et accusamus et iusto odio dignissimos...</p>
-    </p-tabPanel>
-  </p-tabView>
-</div>
+    </p-tabPanel> -->
+</p-tabView>

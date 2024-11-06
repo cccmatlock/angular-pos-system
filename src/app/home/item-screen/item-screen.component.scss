@@ -1,0 +1,64 @@
+@import "styles";
+
+:host ::ng-deep {
+  p-tabview {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p-tabview div[data-pc-name="tabview"] {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .p-tabview-panels {
+    flex: 1;
+    overflow-y: auto;
+    background-color: $color-navy-blue;
+  }
+
+  ul {
+    display: flex;
+  }
+
+  ul li {
+    flex: 1;
+  }
+
+  ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .p-tabview-panel {
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.items-container {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding: 16px;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 16px;
+}
