@@ -1,0 +1,23 @@
+:host ::ng-deep {
+  p-tabview {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p-tabview div[data-pc-name="tabview"] {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .p-tabview-panels {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .p-tabview-panel {
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+}

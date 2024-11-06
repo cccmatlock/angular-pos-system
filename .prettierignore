@@ -1,0 +1,9 @@
+dist
+coverage
+node_modules
+*.min.js
+*.bundle.js
+*.d.ts
+.git
+.cache
+.vscode

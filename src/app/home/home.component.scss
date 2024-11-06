@@ -6,6 +6,16 @@
   background-color: $color-navy-blue;
 }
 
+.item-screen {
+  flex: 3;
+}
+
+.side-bar {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
 .navbar {
   display: flex;
   width: 80px;
